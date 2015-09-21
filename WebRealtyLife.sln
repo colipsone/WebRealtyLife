@@ -3,31 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WRL.WebAPI", "WRL.WebAPI\WRL.WebAPI.csproj", "{485AF71F-E870-430F-A4F7-7E0AE28C2BA0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WRL.Model", "WRL.Model\WRL.Model.csproj", "{1A320CE6-1DA0-4393-A5E3-B22BF2F22705}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WRL.WebAPI.Tests", "WRL.WebAPI.Tests\WRL.WebAPI.Tests.csproj", "{46B54337-1107-4C3B-8AC8-75429B2D5173}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WRL.DataLayer", "WRL.DataLayer\WRL.DataLayer.csproj", "{41A54EF2-C668-4985-8B31-EF33A673F611}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WRL.Site(1)", "WRL.Site\", "{4CAA6E11-66A0-4195-9B80-680EB3A4A3E8}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_2371"
-		Debug.AspNetCompiler.PhysicalPath = "WRL.Site\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_2371\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_2371"
-		Release.AspNetCompiler.PhysicalPath = "WRL.Site\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_2371\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "2371"
-		SlnRelativePath = "WRL.Site\"
-		DefaultWebSiteLanguage = "Visual C#"
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WRL.Web", "WRL.Web\WRL.Web.csproj", "{2CD71A37-C160-4585-8808-F3A4CCAA2B65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WRL.Services", "WRL.Services\WRL.Services.csproj", "{30781B4B-042C-4274-8EAF-BF256158CFCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WRL.Services.Tests", "WRL.Services.Tests\WRL.Services.Tests.csproj", "{9B258210-9C1D-4CC1-9A97-25392FFA0456}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,18 +19,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{485AF71F-E870-430F-A4F7-7E0AE28C2BA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{485AF71F-E870-430F-A4F7-7E0AE28C2BA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{485AF71F-E870-430F-A4F7-7E0AE28C2BA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{485AF71F-E870-430F-A4F7-7E0AE28C2BA0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{46B54337-1107-4C3B-8AC8-75429B2D5173}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{46B54337-1107-4C3B-8AC8-75429B2D5173}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{46B54337-1107-4C3B-8AC8-75429B2D5173}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{46B54337-1107-4C3B-8AC8-75429B2D5173}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4CAA6E11-66A0-4195-9B80-680EB3A4A3E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4CAA6E11-66A0-4195-9B80-680EB3A4A3E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4CAA6E11-66A0-4195-9B80-680EB3A4A3E8}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{4CAA6E11-66A0-4195-9B80-680EB3A4A3E8}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{1A320CE6-1DA0-4393-A5E3-B22BF2F22705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A320CE6-1DA0-4393-A5E3-B22BF2F22705}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A320CE6-1DA0-4393-A5E3-B22BF2F22705}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A320CE6-1DA0-4393-A5E3-B22BF2F22705}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41A54EF2-C668-4985-8B31-EF33A673F611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41A54EF2-C668-4985-8B31-EF33A673F611}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41A54EF2-C668-4985-8B31-EF33A673F611}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41A54EF2-C668-4985-8B31-EF33A673F611}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CD71A37-C160-4585-8808-F3A4CCAA2B65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CD71A37-C160-4585-8808-F3A4CCAA2B65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CD71A37-C160-4585-8808-F3A4CCAA2B65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CD71A37-C160-4585-8808-F3A4CCAA2B65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30781B4B-042C-4274-8EAF-BF256158CFCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30781B4B-042C-4274-8EAF-BF256158CFCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30781B4B-042C-4274-8EAF-BF256158CFCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30781B4B-042C-4274-8EAF-BF256158CFCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B258210-9C1D-4CC1-9A97-25392FFA0456}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B258210-9C1D-4CC1-9A97-25392FFA0456}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B258210-9C1D-4CC1-9A97-25392FFA0456}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B258210-9C1D-4CC1-9A97-25392FFA0456}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
