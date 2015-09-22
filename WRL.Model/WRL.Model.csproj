@@ -51,16 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataLayer\IApartmentRepository.cs" />
-    <Compile Include="DataLayer\IRepository.cs" />
-    <Compile Include="DataLayer\IWRLDbContext.cs" />
     <Compile Include="Entities\Apartment\Apartment.cs" />
     <Compile Include="Entities\IAuditedEntity.cs" />
     <Compile Include="Entities\IEntity.cs" />
     <Compile Include="ViewModels\ApartmentViewModel.cs" />
     <Compile Include="ViewModels\InputModels\ApartmentService\GetAllInputModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\IApartmentService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

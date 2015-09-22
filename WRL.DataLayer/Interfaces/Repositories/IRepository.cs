@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using WRL.Model.Entities;
 
-namespace WRL.Model.DataLayer
+namespace WRL.DataLayer.Interfaces.Repositories
 {
     public interface IRepository<TEntity> where TEntity: class, IEntity, new()
     {

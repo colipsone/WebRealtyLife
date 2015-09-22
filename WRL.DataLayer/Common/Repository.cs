@@ -7,10 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 using WRL.Model.DataLayer;
 using WRL.Model.Entities;
+using IWrlDbContext = WRL.DataLayer.Interfaces.IWrlDbContext;
 
 namespace WRL.DataLayer.Common
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class, IEntity, new()
+    public class Repository<TEntity> : Interfaces.Repositories.IRepository<TEntity> where TEntity : class, IEntity, new()
     {
         #region Fields: Private
 
