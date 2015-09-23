@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using WRL.Model.Entities;
+using WRL.Model.Entity;
 
-namespace WRL.DataLayer.Interfaces.Repositories
+namespace WRL.DataLayer.Interface.Repository
 {
     public interface IRepository<TEntity> where TEntity: class, IEntity, new()
     {

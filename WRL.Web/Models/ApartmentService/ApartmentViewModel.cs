@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace WRL.Model.ViewModels
+namespace WRL.Web.Models.ApartmentService
 {
     public class ApartmentViewModel
     {

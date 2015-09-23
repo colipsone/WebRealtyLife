@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WRL.Model.DataLayer;
-using WRL.Model.Entities.Apartment;
-using WRL.Model.InputModels.ApartmentService;
-using WRL.Model.Services;
-using WRL.Model.ViewModels;
+using WRL.Model.Entity;
+using WRL.Model.Entity.Apartment;
+using WRL.DataLayer.Interface.Repository;
+using WRL.Service.Interface;
 
-namespace WRL.Services
+namespace WRL.Service
 {
     public class ApartmentService: IApartmentService
     {
@@ -30,9 +29,9 @@ namespace WRL.Services
 
         #region Methods: Public
 
-        public IEnumerable<ApartmentViewModel> GetAll(GetAllInputModel inputParam)
+        public IEnumerable<Apartment> GetAll()
         {
-            return _apartmentRepository.GetAll().Select(ap => ap.ToViewModel());
+            return _apartmentRepository.GetAll();
         }
 
         #endregion

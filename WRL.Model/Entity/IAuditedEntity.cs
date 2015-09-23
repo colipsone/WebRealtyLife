@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WRL.Model.Entities
+namespace WRL.Model.Entity
 {
     public interface IAuditedEntity
     {

@@ -1,6 +1,5 @@
-using WRL.Model.DataLayer;
-using WRL.Model.Entities.Apartment;
-using IWrlDbContext = WRL.DataLayer.Interfaces.IWrlDbContext;
+using WRL.DataLayer.Interface;
+using WRL.Model.Entity.Apartment;
 
 namespace WRL.DataLayer
 {

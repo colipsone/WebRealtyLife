@@ -2,10 +2,11 @@ using Microsoft.Practices.Unity;
 using System.Web.Http;
 using Unity.WebApi;
 using WRL.DataLayer;
-using WRL.DataLayer.Common;
-using WRL.DataLayer.Repositories;
-using WRL.Model.DataLayer;
-using WRL.Model.Entities.Apartment;
+using WRL.DataLayer.Interface;
+using WRL.DataLayer.Repository;
+using WRL.DataLayer.Interface.Repository;
+using WRL.Service;
+using WRL.Service.Interface;
 
 namespace WRL.Web
 {
@@ -15,8 +16,24 @@ namespace WRL.Web
         {
 			var container = new UnityContainer();
 
-            container.RegisterType<IApartmentRepository, ApartmentRepository>();
-            
+            #region Repository Registration
+
+            container.RegisterType<IApartmentRepository, ApartmentRepository>(new HierarchicalLifetimeManager());
+
+            #endregion
+
+            #region DbContext Registration
+
+            container.RegisterType<IWrlDbContext, WrlDbContext>(new HierarchicalLifetimeManager());
+
+            #endregion
+
+            #region Service Registration
+
+            container.RegisterType<IApartmentService, ApartmentService>(new HierarchicalLifetimeManager()); 
+
+            #endregion
+
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
     }

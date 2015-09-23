@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WRL.Model.ViewModels;
 
-namespace WRL.Model.Entities.Apartment
+namespace WRL.Model.Entity.Apartment
 {
     public class Apartment: IEntity, IAuditedEntity
     {
@@ -21,7 +16,7 @@ namespace WRL.Model.Entities.Apartment
 
         #endregion
 
-        #region Methods: Public
+        /*#region Methods: Public
 
         public ApartmentViewModel ToViewModel()
         {
@@ -35,6 +30,6 @@ namespace WRL.Model.Entities.Apartment
             };
         }
 
-        #endregion
+        #endregion*/
     }
 }

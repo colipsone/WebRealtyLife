@@ -239,14 +239,18 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ApartmentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ModelMappers\EntitiesMapper.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ApartmentService\ApartmentViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\InputModels\ApartmentService\GetAllInputModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MeViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -360,9 +364,9 @@
       <Project>{1a320ce6-1da0-4393-a5e3-b22bf2f22705}</Project>
       <Name>WRL.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WRL.Services\WRL.Services.csproj">
+    <ProjectReference Include="..\WRL.Services\WRL.Service.csproj">
       <Project>{30781b4b-042c-4274-8eaf-bf256158cfce}</Project>
-      <Name>WRL.Services</Name>
+      <Name>WRL.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

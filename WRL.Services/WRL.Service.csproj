@@ -7,8 +7,8 @@
     <ProjectGuid>{30781B4B-042C-4274-8EAF-BF256158CFCE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WRL.Services</RootNamespace>
-    <AssemblyName>WRL.Services</AssemblyName>
+    <RootNamespace>WRL.Service</RootNamespace>
+    <AssemblyName>WRL.Service</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,9 +41,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApartmentService.cs" />
+    <Compile Include="Interface\IApartmentService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WRL.DataLayer\WRL.DataLayer.csproj">
+      <Project>{41a54ef2-c668-4985-8b31-ef33a673f611}</Project>
+      <Name>WRL.DataLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WRL.Model\WRL.Model.csproj">
       <Project>{1A320CE6-1DA0-4393-A5E3-B22BF2F22705}</Project>
       <Name>WRL.Model</Name>

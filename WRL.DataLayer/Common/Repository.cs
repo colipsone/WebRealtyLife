@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WRL.Model.DataLayer;
-using WRL.Model.Entities;
-using IWrlDbContext = WRL.DataLayer.Interfaces.IWrlDbContext;
+using WRL.Model.Entity;
+using WRL.DataLayer.Interface;
+using WRL.DataLayer.Interface.Repository;
 
 namespace WRL.DataLayer.Common
 {
-    public class Repository<TEntity> : Interfaces.Repositories.IRepository<TEntity> where TEntity : class, IEntity, new()
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class, IEntity, new()
     {
         #region Fields: Private
 

@@ -52,12 +52,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\Repository.cs" />
-    <Compile Include="Interfaces\IWRLDbContext.cs" />
-    <Compile Include="Interfaces\Repositories\IApartmentRepository.cs" />
-    <Compile Include="Interfaces\Repositories\IRepository.cs" />
-    <Compile Include="Interfaces\Services\IApartmentService.cs" />
+    <Compile Include="Interface\IWRLDbContext.cs" />
+    <Compile Include="Interface\Repository\IApartmentRepository.cs" />
+    <Compile Include="Interface\Repository\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\ApartmentRepository.cs" />
+    <Compile Include="Repository\ApartmentRepository.cs" />
     <Compile Include="WRLDbContext.cs" />
   </ItemGroup>
   <ItemGroup>
