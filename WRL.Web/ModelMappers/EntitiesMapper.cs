@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using WRL.Model.Entity.Apartment;
+﻿using WRL.Model.Entity.Apartment;
 using WRL.Web.Models.ApartmentService;
 
 namespace WRL.Web.ModelMappers

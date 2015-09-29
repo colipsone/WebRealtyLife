@@ -17,17 +17,15 @@ namespace WRL.Web
                 "~/Scripts/jquery.unobtrusive*",
                 "~/Scripts/jquery.validate*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/knockout").Include(
-                "~/Scripts/knockout-{version}.js",
-                "~/Scripts/knockout.validation.js"));
-
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
-                "~/Scripts/sammy-{version}.js",
-                "~/Scripts/app/common.js",
-                "~/Scripts/app/app.datamodel.js",
-                "~/Scripts/app/app.viewmodel.js",
-                "~/Scripts/app/home.viewmodel.js",
-                "~/Scripts/app/_run.js"));
+                "~/Scripts/angular-ui-router.js",
+                "~/Scripts/app/app.js")
+                .IncludeDirectory("~/Scripts/app/apartments", "*.js", true));
+
+            bundles.Add(new ScriptBundle("~/bundles/angular-material").Include(
+               "~/node_modules/angular/angular.js",
+               "~/node_modules/angular-animate/angular-animate.js",
+               "~/node_modules/angular-aria/angular-aria.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
@@ -40,7 +38,8 @@ namespace WRL.Web
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                  "~/Content/bootstrap.css",
-                 "~/Content/Site.css"));
+                 "~/Content/Site.css",
+                 "~/node_modules/angular-material/angular-material.css"));
         }
     }
 }
