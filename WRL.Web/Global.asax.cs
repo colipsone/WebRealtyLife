@@ -4,6 +4,8 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using Microsoft.Practices.Unity;
+using Unity.WebApi;
+using Microsoft.Practices.Unity.Mvc;
 
 namespace WRL.Web
 {
@@ -17,7 +19,14 @@ namespace WRL.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            UnityConfig.RegisterComponents();
+            DependencyResolver.SetResolver(new Microsoft.Practices.Unity.Mvc.UnityDependencyResolver(UnityConfig.Container));
+
+            GlobalConfiguration.Configuration.DependencyResolver = new Unity.WebApi.UnityDependencyResolver(UnityConfig.Container);
         }
+
+        /*protected void Application_End()
+        {
+            UnityConfig.Container.Dispose();
+        }*/
     }
 }

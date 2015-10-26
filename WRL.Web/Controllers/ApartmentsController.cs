@@ -14,6 +14,7 @@ using WRL.DataLayer.Interface;
 using WRL.DataLayer.Interface.Repository;
 using WRL.Model.Entity.Apartment;
 using WRL.Service.Interface;
+using WRL.Web.Attributes;
 using WRL.Web.ModelMappers;
 using WRL.Web.Models.ApartmentService;
 
@@ -41,8 +42,11 @@ namespace WRL.Web.Controllers
         #region Methods: Public
 
         // GET: api/Apartments
-        public IEnumerable<ApartmentViewModel> GetApartments()
+        [HttpGet]
+        [AuthorizeByActivity("test action")]
+        public IEnumerable<ApartmentViewModel> Get()
         {
+
             return _apartmentService.GetAll().Select(apartment => apartment.ToViewModel());
         }
 

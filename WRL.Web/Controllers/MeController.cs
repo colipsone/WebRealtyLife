@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
+using WRL.Web.Managers;
 using WRL.Web.Models;
 
 namespace WRL.Web.Controllers
@@ -32,7 +33,7 @@ namespace WRL.Web.Controllers
         {
             get
             {
-                return _userManager ?? HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                return _userManager/* ?? HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>()*/;
             }
             private set
             {
@@ -44,7 +45,7 @@ namespace WRL.Web.Controllers
         public GetViewModel Get()
         {
             var user = UserManager.FindById(User.Identity.GetUserId());
-            return new GetViewModel() { Hometown = user.Hometown };
+            return new GetViewModel() { };
         }
     }
 }

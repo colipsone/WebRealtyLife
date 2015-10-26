@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using WRL.Web.Managers;
 using WRL.Web.Models;
 
 namespace WRL.Web.Controllers
@@ -13,9 +14,6 @@ namespace WRL.Web.Controllers
     [Authorize]
     public class ManageController : Controller
     {
-        private ApplicationSignInManager _signInManager;
-        private ApplicationUserManager _userManager;
-
         public ManageController()
         {
         }
@@ -26,29 +24,9 @@ namespace WRL.Web.Controllers
             SignInManager = signInManager;
         }
 
-        public ApplicationSignInManager SignInManager
-        {
-            get
-            {
-                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
-            }
-            private set
-            {
-                _signInManager = value;
-            }
-        }
+        public ApplicationSignInManager SignInManager { get; private set; }
 
-        public ApplicationUserManager UserManager
-        {
-            get
-            {
-                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            }
-            private set
-            {
-                _userManager = value;
-            }
-        }
+        public ApplicationUserManager UserManager { get; private set; }
 
         //
         // GET: /Manage/Index
@@ -322,10 +300,10 @@ namespace WRL.Web.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing && _userManager != null)
+            if (disposing && UserManager != null)
             {
-                _userManager.Dispose();
-                _userManager = null;
+                UserManager.Dispose();
+                UserManager = null;
             }
 
             base.Dispose(disposing);

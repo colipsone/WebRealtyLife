@@ -6,21 +6,22 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using WRL.Model.Entity.Security;
+using WRL.Web.Managers;
 using WRL.Web.Models;
+using WRL.Web.Models.UserManagment;
 
 namespace WRL.Web.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
-        private ApplicationSignInManager _signInManager;
-        private ApplicationUserManager _userManager;
-
-        public AccountController()
+        /*public AccountController()
         {
-        }
+        }*/
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
@@ -28,29 +29,9 @@ namespace WRL.Web.Controllers
             SignInManager = signInManager;
         }
 
-        public ApplicationSignInManager SignInManager
-        {
-            get
-            {
-                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
-            }
-            private set
-            {
-                _signInManager = value;
-            }
-        }
+        public ApplicationSignInManager SignInManager { get; private set; }
 
-        public ApplicationUserManager UserManager
-        {
-            get
-            {
-                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            }
-            private set
-            {
-                _userManager = value;
-            }
-        }
+        public ApplicationUserManager UserManager { get; private set; }
 
         // The Authorize Action is the end point which gets called when you access any
         // protected Web API. If the user is not logged in then they will be redirected to 
@@ -163,7 +144,13 @@ namespace WRL.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Hometown = model.Hometown };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                user.Claims.Add(new IdentityUserClaim
+                {
+                    ClaimType = "CanSeeApartments",
+                    ClaimValue = "true",
+                    UserId = user.Id
+                });
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -175,7 +162,7 @@ namespace WRL.Web.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    return View("");
                 }
                 AddErrors(result);
             }
@@ -379,7 +366,7 @@ namespace WRL.Web.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Hometown = model.Hometown };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
@@ -419,16 +406,16 @@ namespace WRL.Web.Controllers
         {
             if (disposing)
             {
-                if (_userManager != null)
+                if (UserManager != null)
                 {
-                    _userManager.Dispose();
-                    _userManager = null;
+                    UserManager.Dispose();
+                    UserManager = null;
                 }
 
-                if (_signInManager != null)
+                if (SignInManager != null)
                 {
-                    _signInManager.Dispose();
-                    _signInManager = null;
+                    SignInManager.Dispose();
+                    SignInManager = null;
                 }
             }
 

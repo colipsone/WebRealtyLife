@@ -1,14 +1,14 @@
-﻿using System;
+using System;
+using System.Web.Http;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.DataProtection;
-using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
-using WRL.Web.Models;
+using WRL.Model.Entity.Security;
+using WRL.Web.Managers;
 using WRL.Web.Providers;
 
 namespace WRL.Web
@@ -25,22 +25,23 @@ namespace WRL.Web
                 TokenEndpointPath = new PathString("/Token"),
                 AuthorizeEndpointPath = new PathString("/Account/Authorize"),
                 Provider = new ApplicationOAuthProvider(PublicClientId),
-                AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
+                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(30),
                 AllowInsecureHttp = true
             };
         }
 
-        public static OAuthAuthorizationServerOptions OAuthOptions { get; private set; }
+        internal static IDataProtectionProvider DataProtectionProvider { get; private set; }
 
-        public static string PublicClientId { get; private set; }
+        public static OAuthAuthorizationServerOptions OAuthOptions { get; }
+
+        public static string PublicClientId { get; }
 
         // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301864
         public void ConfigureAuth(IAppBuilder app)
         {
-            // Configure the db context, user manager and signin manager to use a single instance per request
-            app.CreatePerOwinContext(ApplicationDbContext.Create);
-            app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
-            app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
+            DataProtectionProvider = app.GetDataProtectionProvider();
+
+            //app.CreatePerOwinContext(() => GlobalConfiguration.Configuration.DependencyResolver.GetService<ApplicationUserManager>());
 
             // Enable the application to use a cookie to store information for the signed in user
             app.UseCookieAuthentication(new CookieAuthenticationOptions
@@ -51,9 +52,9 @@ namespace WRL.Web
                 {
                     // Enables the application to validate the security stamp when the user logs in.
                     // This is a security feature which is used when you change a password or add an external login to your account.  
-                    OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<ApplicationUserManager, ApplicationUser>(
-                        validateInterval: TimeSpan.FromMinutes(20),
-                        regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
+                    OnValidateIdentity =
+                        SecurityStampValidator.OnValidateIdentity<ApplicationUserManager, ApplicationUser>(
+                            TimeSpan.FromMinutes(20), (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }
             });
             // Use a cookie to temporarily store information about a user logging in with a third party login provider

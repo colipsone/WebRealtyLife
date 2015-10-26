@@ -18,12 +18,14 @@ namespace WRL.Web
                 "~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
+                "~/Scripts/angular.js",
+                "~/Scripts/angular-resource.js",
                 "~/Scripts/angular-ui-router.js",
+                "~/Scripts/app/common/common.js",
                 "~/Scripts/app/app.js")
                 .IncludeDirectory("~/Scripts/app/apartments", "*.js", true));
 
             bundles.Add(new ScriptBundle("~/bundles/angular-material").Include(
-               "~/node_modules/angular/angular.js",
                "~/node_modules/angular-animate/angular-animate.js",
                "~/node_modules/angular-aria/angular-aria.js"));
 
