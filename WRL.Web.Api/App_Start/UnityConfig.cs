@@ -5,6 +5,7 @@ using Unity.WebApi;
 using WRL.DataLayer.Common;
 using WRL.Service;
 using WRL.Service.Interface;
+using WRL.Web.Api.Security;
 
 namespace WRL.Web.Api
 {
@@ -35,6 +36,8 @@ namespace WRL.Web.Api
 
             container.RegisterType<IAuthService, AuthService>(new HierarchicalLifetimeManager());
             container.RegisterType<IApartmentService, ApartmentService>(new HierarchicalLifetimeManager());
+
+            container.RegisterType<AuthorizationServerProvider, AuthorizationServerProvider>(new HierarchicalLifetimeManager()); 
 
             return container;
         }
