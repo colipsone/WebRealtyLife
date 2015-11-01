@@ -38,7 +38,7 @@ namespace WRL.DataLayer.Common
             DbSet.Add(entity);
         }
 
-        public virtual void Delete(int id)
+        public virtual void Delete(Guid id)
         {
             var entityToDelete = DbSet.FirstOrDefault(ent => ent.Id == id);
             if (entityToDelete != null)
@@ -52,7 +52,7 @@ namespace WRL.DataLayer.Common
             return DbSet.OfType<TEntity>();
         }
 
-        public virtual TEntity GetById(int id)
+        public virtual TEntity GetById(Guid id)
         {
             return DbSet.FirstOrDefault(ent => ent.Id == id);
         }

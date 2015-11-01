@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -9,6 +11,7 @@ namespace WRL.Model.Entity
 {
     public interface IEntity
     {
-        int Id { get; set; }
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        Guid Id { get; set; }
     }
 }

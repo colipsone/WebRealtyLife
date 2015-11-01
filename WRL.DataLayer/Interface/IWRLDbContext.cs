@@ -9,8 +9,6 @@ namespace WRL.DataLayer.Interface
     {
         IDbSet<Apartment> Apartments { get; set; }
 
-        //IDbSet<ApplicationUser> ApplicationUsers { get; set; }
-
         DbSet<TEntity> Set<TEntity>() where TEntity : class;
 
         int SaveChanges();

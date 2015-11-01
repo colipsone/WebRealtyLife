@@ -26,8 +26,6 @@ namespace WRL.DataLayer
 
         public virtual IDbSet<Apartment> Apartments { get; set; }
 
-        //public virtual IDbSet<ApplicationUser> ApplicationUsers { get; set; }
-
         #endregion
     }
 }

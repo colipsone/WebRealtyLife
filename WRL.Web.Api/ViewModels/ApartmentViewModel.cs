@@ -1,12 +1,12 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
-namespace WRL.Model.Entity.Apartment
+namespace WRL.Web.Api.ViewModels
 {
-    public class Apartment: IEntity, IAuditedEntity
+    public class ApartmentViewModel
     {
-
         #region Fields: Public
 
         public Guid Id { get; set; }

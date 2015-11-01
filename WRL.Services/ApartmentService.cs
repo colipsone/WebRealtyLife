@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,8 @@ namespace WRL.Service
 
         public ApartmentService(IApartmentRepository apartmentRepository)
         {
+            Contract.Requires(apartmentRepository != null);
+
             _apartmentRepository = apartmentRepository;
         }
 

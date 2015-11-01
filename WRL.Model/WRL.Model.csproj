@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Security\SecurityActivity.cs" />
     <Compile Include="Entity\Apartment\Apartment.cs" />
     <Compile Include="Entity\IAuditedEntity.cs" />
     <Compile Include="Entity\IEntity.cs" />
