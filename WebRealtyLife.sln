@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WRL.Services.Tests", "WRL.S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WRL.Web.Api", "WRL.Web.Api\WRL.Web.Api.csproj", "{F9658D80-E872-4DEC-BEC7-F13C6BD52DBE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WRL.Site", "WRL.Site\WRL.Site.csproj", "{00B71649-DDDF-4EB0-8457-AEE66350282A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F9658D80-E872-4DEC-BEC7-F13C6BD52DBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9658D80-E872-4DEC-BEC7-F13C6BD52DBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9658D80-E872-4DEC-BEC7-F13C6BD52DBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00B71649-DDDF-4EB0-8457-AEE66350282A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00B71649-DDDF-4EB0-8457-AEE66350282A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00B71649-DDDF-4EB0-8457-AEE66350282A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00B71649-DDDF-4EB0-8457-AEE66350282A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
