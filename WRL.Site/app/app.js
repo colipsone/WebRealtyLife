@@ -1,45 +1,50 @@
 ﻿(function () {
     "use strict";
 
-    var module = angular.module("wrl.common", ["ui.router", "wrl.security"]);
+    var module = angular.module("wrl.common", ["ui.router", "wrl.security", "wrl.apartments"]);
 
-    function configure($stateProvider) {
+    function configure($stateProvider, $httpProvider) {
+
+        // #region Configure routing
+
         $stateProvider.
-            state("home", {
-                url: "/home",
-                templateUrl: ""
-            }).
-            state("login", {
-                url: "/login",
-                templateUrl: "app/security/templates/login.html",
-                controller: "loginController",
-                controllerAs: "vm"
-            }).
-            state("logout", {
-                url: "/logout",
-                templateUrl: ""
-            }).
-            state("signup", {
-                url: "/signup",
-                templateUrl: "app/security/templates/signup.html",
-                controller: "signupController",
-                controllerAs: "vm"
-            }).
-            state("apartments", {
-                url: "/apartments",
-                templateUrl: ""
-                /*controller: "signupController",
-                controllerAs: "vm"*/
-            });
+                    state("home", {
+                        url: "/home",
+                        templateUrl: "app/templates/home.html",
+                        controller: "homeController",
+                        controllerAs: "vm"
+                    }).
+                    state("login", {
+                        url: "/login",
+                        templateUrl: "app/security/templates/login.html",
+                        controller: "loginController",
+                        controllerAs: "vm"
+                    }).
+                    state("signup", {
+                        url: "/signup",
+                        templateUrl: "app/security/templates/signup.html",
+                        controller: "signupController",
+                        controllerAs: "vm"
+                    }).
+                    state("apartments", {
+                        url: "/apartments",
+                        templateUrl: "app/apartments/templates/apartmentsList.html",
+                        controller: "apartmentsController",
+                        controllerAs: "vm"
+                    });
+
+        // #endregion
+
+        $httpProvider.interceptors.push("authInterceptionService");
     }
 
-    configure.$inject = ["$stateProvider"];
+    configure.$inject = ["$stateProvider", "$httpProvider"];
 
     module.config(configure);
 
     module.service("settings", function() {
         return {
-            baseApiUrl: "http://localhost:4897/",
+            baseApiUrl: "http://localhost:4897/"
         };
     });
 

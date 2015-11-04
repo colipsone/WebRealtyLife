@@ -1,6 +1,12 @@
 ﻿(function () {
     "use strict";
 
+    angular
+        .module("wrl.security")
+        .factory("authService", authService);
+
+    authService.$inject = ["$resource", "settings", "localStorageService"];
+
     function authService($resource, settings, localStorageService) {
         var serviceFactory = $resource(settings.baseApiUrl, {}, {
             register: {
@@ -19,6 +25,14 @@
         var authentication = {
             isAuth: false,
             userName: ""
+        };
+
+        return {
+            authentication: authentication,
+            login: login,
+            logOut: logOut,
+            saveRegistration: saveRegistration,
+            fillAuthData: fillAuthData
         };
 
         //#region Methods: Private
@@ -66,19 +80,6 @@
 
         //#endregion
 
-        return {
-            authentication: authentication,
-            login: login,
-            logOut: logOut,
-            saveRegistration: saveRegistration,
-            fillAuthData: fillAuthData
-        };
-
     }
 
-    angular
-        .module("wrl.security")
-        .factory("authService", authService);
-
-    authService.$inject = ["$resource", "settings", "localStorageService"];
 })();

@@ -94,14 +94,21 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\apartments\apartments.js" />
+    <Content Include="app\apartments\controllers\apartmentsController.js" />
+    <Content Include="app\apartments\services\apartmentsService.js" />
+    <Content Include="app\apartments\templates\apartmentsList.html" />
     <Content Include="app\app.js" />
+    <Content Include="app\controllers\homeController.js" />
     <Content Include="app\controllers\indexController.js" />
     <Content Include="app\security\controllers\loginController.js" />
     <Content Include="app\security\controllers\signupController.js" />
     <Content Include="app\security\security.js" />
+    <Content Include="app\security\services\authInterceptionService.js" />
     <Content Include="app\security\services\authService.js" />
     <Content Include="app\security\templates\login.html" />
     <Content Include="app\security\templates\signup.html" />
+    <Content Include="app\templates\home.html" />
     <Content Include="packages.config" />
     <Content Include="scripts\angular-local-storage.js" />
     <Content Include="scripts\angular-local-storage.min.js" />
@@ -224,7 +231,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\services\" />
-    <Folder Include="app\templates\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

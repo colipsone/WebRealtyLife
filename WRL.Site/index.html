@@ -8,7 +8,7 @@
     <link href="content/site.css" rel="stylesheet"/>
 </head>
 <body>
-    <div class="navbar navbar-default navbar-static-top" role="navigation" ng-controller="indexController">
+    <div class="navbar navbar-default navbar-static-top" role="navigation" ng-controller="indexController as vm">
         <div class="container">
             <div class="navbar-header">
                 <button class="btn btn-success navbar-toggle" ng-click="navbarExpanded = !navbarExpanded">
@@ -18,9 +18,9 @@
             </div>
             <div class="collapse navbar-collapse" data-collapse="!navbarExpanded">
                 <ul class="nav navbar-nav navbar-right">
-                    <li ng-hide="!vm.authentication.isAuth"><span ng-bind="'Добро пожаловать' + vm.authentication.userName"></span></li>
+                    <li ng-hide="!vm.authentication.isAuth"><a><span ng-bind="'Добро пожаловать ' + vm.authentication.userName"></span></a></li>
                     <li ng-hide="!vm.authentication.isAuth"><a ui-sref="apartments">Квартиры</a></li>
-                    <li ng-hide="!vm.authentication.isAuth"><a ui-sref="logout" ng-click="logOut()">Выйти</a></li>
+                    <li ng-hide="!vm.authentication.isAuth"><a ng-click="vm.logOut()">Выйти</a></li>
                     <li ng-hide="vm.authentication.isAuth"> <a ui-sref="login">Войти</a></li>
                     <li ng-hide="vm.authentication.isAuth"> <a ui-sref="signup">Регистрация</a></li>
                 </ul>
@@ -51,12 +51,17 @@
     <script src="scripts/angular-local-storage.js"></script>
     <!--Modules-->
     <script src="app/security/security.js"></script>
+    <script src="app/apartments/apartments.js"></script>
     <script src="app/app.js"></script>
     <!--Services-->
     <script src="app/security/services/authService.js"></script>
+    <script src="app/security/services/authInterceptionService.js"></script>
+    <script src="app/apartments/services/apartmentsService.js"></script>
     <!--Controllers-->
     <script src="app/controllers/indexController.js"></script>
+    <script src="app/controllers/homeController.js"></script>
     <script src="app/security/controllers/signupController.js"></script>
     <script src="app/security/controllers/loginController.js"></script>
+    <script src="app/apartments/controllers/apartmentsController.js"></script>
 </body>
 </html>
