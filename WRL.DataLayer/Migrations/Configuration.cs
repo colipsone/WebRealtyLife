@@ -1,32 +1,27 @@
+using System.Text;
+using WRL.Model.Entity.Apartment;
+
 namespace WRL.DataLayer.Migrations
 {
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<WRL.DataLayer.WrlDbContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
-            ContextKey = "WRL.DataLayer.WrlDbContext";
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(WRL.DataLayer.WrlDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            var city = new City {Name = "Киев"};
+            var region = new Region
+            {
+                Name = "Голосеевский",
+                CityId = city.Id
+            };
+            context.Cities.Add(city);
+            context.Regions.Add(region);
         }
     }
 }

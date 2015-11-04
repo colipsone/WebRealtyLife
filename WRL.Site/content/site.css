@@ -1,3 +1,7 @@
 ﻿.full-container-width {
     width: 100%
 }
+
+.selected-menuitem {
+    background: darkorange;
+}

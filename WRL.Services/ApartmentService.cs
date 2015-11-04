@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics.Contracts;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WRL.Model.Entity;
 using WRL.Model.Entity.Apartment;
 using WRL.DataLayer.Interface.Repository;
 using WRL.Service.Interface;

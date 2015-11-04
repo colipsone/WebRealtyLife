@@ -105,14 +105,22 @@
   <ItemGroup>
     <Compile Include="Common\DataLayerUnityConfig.cs" />
     <Compile Include="Common\Repository.cs" />
+    <Compile Include="EntitiesConfigurations\ApartmentOwnerConfiguration.cs" />
+    <Compile Include="EntitiesConfigurations\RegionConfiguration.cs" />
+    <Compile Include="EntitiesConfigurations\StreetConfiguration.cs" />
+    <Compile Include="EntitiesConfigurations\AuditedEntityTypeConfiguration.cs" />
+    <Compile Include="EntitiesConfigurations\ApartmentConfiguration.cs" />
+    <Compile Include="EntitiesConfigurations\SubwayStationConfiguration.cs" />
+    <Compile Include="EntitiesConfigurations\WrlConfigModelBuilder.cs" />
     <Compile Include="Interface\IWRLDbContext.cs" />
     <Compile Include="Interface\Repository\IApartmentRepository.cs" />
+    <Compile Include="Interface\Repository\IApartmentTypeRepository.cs" />
     <Compile Include="Interface\Repository\IAuthRepository.cs" />
+    <Compile Include="Interface\Repository\ICityRepository.cs" />
+    <Compile Include="Interface\Repository\IRegionRepository.cs" />
     <Compile Include="Interface\Repository\IRepository.cs" />
-    <Compile Include="Migrations\201510311244236_InitialCreate.cs" />
-    <Compile Include="Migrations\201510311244236_InitialCreate.Designer.cs">
-      <DependentUpon>201510311244236_InitialCreate.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Interface\Repository\IStreetRepository.cs" />
+    <Compile Include="Interface\Repository\ISubwayStationRepository.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\ApartmentRepository.cs" />
@@ -128,11 +136,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201510311244236_InitialCreate.resx">
-      <DependentUpon>201510311244236_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -65,9 +65,16 @@
   <ItemGroup>
     <Compile Include="Common\Security\SecurityActivity.cs" />
     <Compile Include="Entity\Apartment\Apartment.cs" />
-    <Compile Include="Entity\IAuditedEntity.cs" />
-    <Compile Include="Entity\IEntity.cs" />
+    <Compile Include="Entity\Apartment\ApartmentOwner.cs" />
+    <Compile Include="Entity\Apartment\ApartmentType.cs" />
+    <Compile Include="Entity\Apartment\City.cs" />
+    <Compile Include="Entity\Apartment\Region.cs" />
+    <Compile Include="Entity\Apartment\Street.cs" />
+    <Compile Include="Entity\Apartment\SubwayStation.cs" />
     <Compile Include="Entity\Security\ApplicationUser.cs" />
+    <Compile Include="Interface\Entity\Common\BaseEntity.cs" />
+    <Compile Include="Interface\Entity\Common\ILookup.cs" />
+    <Compile Include="Interface\Security\AuditedEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -76,7 +83,9 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Common\Entity\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

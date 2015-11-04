@@ -10,6 +10,11 @@
             authService.logOut();
             $state.go("home");
         };
+
+        vm.setActive = function (event) {
+            $(".selected-menuitem").removeClass("selected-menuitem");
+            $(event.currentTarget).addClass("selected-menuitem");
+        }
     }
 
     angular

@@ -1,21 +1,54 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
+using WRL.Model.Interface.Security;
 
 namespace WRL.Model.Entity.Apartment
 {
-    public class Apartment: IEntity, IAuditedEntity
+    public class Apartment: AuditedEntity
     {
+        #region Simple Type Properties
 
-        #region Fields: Public
+        public int FloorNumber { get; set; }
 
-        public Guid Id { get; set; }
-        public int CreatedBy { get; set; }
-        public int UpdatedBy { get; set; }
-        public DateTime CreatedOn { get; set; }
-        public DateTime UpdatedOn { get; set; }
-        public string Address { get; set; }
+        public int FloorsAmount { get; set; }
 
+        public int Square { get; set; }
+
+        public string HouseNumber { get; set; }
+
+        public int RoomsNumber { get; set; }
+
+        public string Price { get; set; }
+
+        public string Note { get; set; }
+
+        public string Number
+        {
+            get { return Id.ToString(); }
+        }
+
+        #endregion
+
+        #region Lookup Properties
+
+        public Guid StreetId { get; set; }
+
+        public Street Street { get; set; }
+
+        public Guid? ApartmentTypeId { get; set; }
+
+        public virtual ApartmentType ApartmentType { get; set; }
+
+        public Guid? SubwayStationId { get; set; }
+
+        public virtual SubwayStation SubwayStation { get; set; }
+
+        #endregion
+
+        #region Navigation Properties
+
+        public virtual ICollection<ApartmentOwner> Owners { get; set; }  
+        
         #endregion
     }
 }

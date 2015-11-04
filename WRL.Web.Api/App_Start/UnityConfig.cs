@@ -1,7 +1,5 @@
 using System;
 using Microsoft.Practices.Unity;
-using System.Web.Http;
-using Unity.WebApi;
 using WRL.DataLayer.Common;
 using WRL.Service;
 using WRL.Service.Interface;

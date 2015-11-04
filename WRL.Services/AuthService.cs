@@ -1,7 +1,5 @@
 using System;
-using System.Data.Entity.Infrastructure;
 using System.Diagnostics.Contracts;
-using System.Runtime.CompilerServices;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;

@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
 using System.Web.Http;
 using Microsoft.AspNet.Identity;
-using WRL.DataLayer.Repository;
 using WRL.Service.Interface;
 using WRL.Web.Api.ViewModels;
 

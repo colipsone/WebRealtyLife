@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.Owin.Security;
 using Microsoft.Practices.Unity;
 using WRL.DataLayer.Interface;
 using WRL.DataLayer.Interface.Repository;
