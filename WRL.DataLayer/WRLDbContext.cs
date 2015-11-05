@@ -1,7 +1,6 @@
 using Microsoft.AspNet.Identity.EntityFramework;
 using WRL.DataLayer.EntitiesConfigurations;
 using WRL.DataLayer.Interface;
-using WRL.DataLayer.Migrations;
 using WRL.Model.Entity.Apartment;
 using WRL.Model.Entity.Security;
 
@@ -16,7 +15,6 @@ namespace WRL.DataLayer
         public WrlDbContext()
             : base("name=WRLDbContext")
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<WrlDbContext, Configuration>("WRLDbContext"));
         }
 
         #endregion
