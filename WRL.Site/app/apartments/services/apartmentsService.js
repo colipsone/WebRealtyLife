@@ -5,15 +5,19 @@
         .module("wrl.apartments")
         .factory("apartmentsService", apartmentsService);
 
-    apartmentsService.$inject = ["$resource"];
+    apartmentsService.$inject = ["$resource", "settings"];
 
-    function apartmentsService($resource) {
-        var service = {
-            getData: getData
+    function apartmentsService($resource, settings) {
+        var apartmentApiUrl = settings.baseApiUrl + "api/apartment";
+        var serviceFactory = $resource(apartmentApiUrl, {}, {
+        });
+
+        return {
+            getApartments: getApartments
         };
 
-        return service;
-
-        function getData() { }
+        function getApartments() {
+            return serviceFactory.query().$promise;
+        }
     }
 })();

@@ -28,7 +28,7 @@ namespace WRL.Web.Api.Controllers
         #region Methods: Public
 
         [HttpGet]
-        [Route("getAll")]
+        //[Route("getAll")]
         [Authorize]
         public async Task<IEnumerable<ApartmentViewModel>> GetAll()
         {

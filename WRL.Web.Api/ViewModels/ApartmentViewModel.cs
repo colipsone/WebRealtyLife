@@ -8,15 +8,13 @@ namespace WRL.Web.Api.ViewModels
 
         public Guid Id { get; set; }
 
-        public int CreatedBy { get; set; }
+        public Guid? CreatedBy { get; set; }
 
-        public int UpdatedBy { get; set; }
+        public Guid? UpdatedBy { get; set; }
 
-        public DateTime CreatedOn { get; set; }
+        public DateTime? CreatedOn { get; set; }
 
-        public DateTime UpdatedOn { get; set; }
-
-        public string Address { get; set; }
+        public DateTime? UpdatedOn { get; set; }
 
         public int FloorNumber { get; set; }
 

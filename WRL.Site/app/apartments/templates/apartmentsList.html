@@ -1,3 +1,13 @@
 ﻿<div>
     <h1>Квартиры</h1>
+    <table ng-table="vm.tableParams" class="table">
+        <tr ng-repeat="apartment in $data">
+            <td title="'Улица'">
+                {{apartment.streetName}}
+            </td>
+            <td title="'№ дома'">
+                {{apartment.houseNumber}}
+            </td>
+        </tr>
+    </table>
 </div>
