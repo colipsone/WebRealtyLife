@@ -109,12 +109,17 @@
     <Content Include="app\security\templates\login.html" />
     <Content Include="app\security\templates\signup.html" />
     <Content Include="app\templates\home.html" />
+    <Content Include="content\ui-bootstrap-csp.css" />
     <Content Include="content\ui-grid.css" />
     <Content Include="content\ui-grid.min.css" />
     <Content Include="content\ui-grid.svg" />
     <Content Include="packages.config" />
     <Content Include="scripts\angular-local-storage.js" />
     <Content Include="scripts\angular-local-storage.min.js" />
+    <Content Include="scripts\angular-ui\ui-bootstrap-tpls.js" />
+    <Content Include="scripts\angular-ui\ui-bootstrap-tpls.min.js" />
+    <Content Include="scripts\angular-ui\ui-bootstrap.js" />
+    <Content Include="scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="scripts\angular.min.js.map" />
     <Content Include="scripts\angular-resource.min.js.map" />
     <Content Include="scripts\jquery-1.9.1.min.map" />
