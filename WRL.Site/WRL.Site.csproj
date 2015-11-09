@@ -109,18 +109,18 @@
     <Content Include="app\security\templates\login.html" />
     <Content Include="app\security\templates\signup.html" />
     <Content Include="app\templates\home.html" />
-    <Content Include="content\ng-table.css" />
-    <Content Include="content\ng-table.min.css" />
+    <Content Include="content\ui-grid.css" />
+    <Content Include="content\ui-grid.min.css" />
+    <Content Include="content\ui-grid.svg" />
     <Content Include="packages.config" />
     <Content Include="scripts\angular-local-storage.js" />
     <Content Include="scripts\angular-local-storage.min.js" />
     <Content Include="scripts\angular.min.js.map" />
     <Content Include="scripts\angular-resource.min.js.map" />
     <Content Include="scripts\jquery-1.9.1.min.map" />
-    <Content Include="scripts\ng-table.js" />
-    <Content Include="scripts\ng-table.min.js" />
-    <Content Include="scripts\ng-table.min.js.map" />
-    <Content Include="content\ng-table.less" />
+    <Content Include="content\ui-grid.woff" />
+    <Content Include="content\ui-grid.ttf" />
+    <Content Include="content\ui-grid.eot" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -230,6 +230,8 @@
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\jquery-1.9.1.js" />
     <Content Include="scripts\jquery-1.9.1.min.js" />
+    <Content Include="scripts\ui-grid.js" />
+    <Content Include="scripts\ui-grid.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

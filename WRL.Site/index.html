@@ -5,7 +5,7 @@
     <meta charset="utf-8"/>
     <title>Web Realty Life</title>
     <link href="content/bootstrap.css" rel="stylesheet"/>
-    <link href="content/ng-table.css" rel="stylesheet"/>
+    <link href="content/ui-grid.css" rel="stylesheet"/>
     <link href="content/site.css" rel="stylesheet"/>
 </head>
 <body>
@@ -28,14 +28,14 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div id="content">
         <div ui-view="">
         </div>
     </div>
     <div id="footer" class="panel-footer navbar-fixed-bottom">
         <div class="container">
             <p class="text-muted">
-                Created by Nick Colipso.
+                Разработано: Nick Colipso.
             </p>
         </div>
     </div>
@@ -46,7 +46,7 @@
     <script src="scripts/angular-ui-router.js"></script>
     <script src="scripts/angular-resource.js"></script>
     <script src="scripts/angular-local-storage.js"></script>
-    <script src="scripts/ng-table.js"></script>
+    <script src="scripts/ui-grid.js"></script>
     <!--Modules-->
     <script src="app/security/security.js"></script>
     <script src="app/apartments/apartments.js"></script>

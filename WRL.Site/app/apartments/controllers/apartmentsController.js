@@ -5,18 +5,30 @@
         .module("wrl.apartments")
         .controller("apartmentsController", apartmentsController);
 
-    apartmentsController.$inject = ["apartmentsService", "NgTableParams"];
+    apartmentsController.$inject = ["apartmentsService"];
 
-    function apartmentsController(apartmentsService, ngTableParams) {
+    function apartmentsController(apartmentsService) {
         var vm = this;
 
-        vm.tableParams = new ngTableParams({}, {
-            getData: function(params) {
-                return apartmentsService.getApartments().then(function(apartments) {
-                    params.total = apartments.length;
-                    return apartments;
-                });
-            }
+        vm.gridOptions = {
+            columnDefs: [
+                {
+                    name: "Номер",
+                    field: "number"
+                },
+                {
+                    name: "Название улицы",
+                    field: "streetName"
+                },
+                {
+                    name: "№ дома",
+                    field: "houseNumber"
+                }
+            ]
+        }
+
+        apartmentsService.getApartments().then(function (apartments) {
+            vm.gridOptions.data = apartments;
         });
     }
 })();

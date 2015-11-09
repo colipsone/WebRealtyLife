@@ -30,11 +30,6 @@ namespace WRL.Web.Api.ViewModels
 
         public string Note { get; set; }
 
-        public string Number
-        {
-            get { return Id.ToString(); }
-        }
-
         public string StreetName { get; set; }
 
         public string ApartmentTypeName { get; set; }

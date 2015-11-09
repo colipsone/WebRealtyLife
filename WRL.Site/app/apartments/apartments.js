@@ -1,5 +1,5 @@
 ﻿(function() {
     "use strict";
 
-    angular.module("wrl.apartments", ["ngTable"]);
+    angular.module("wrl.apartments", ["ui.grid", "ui.grid.resizeColumns"]);
 })();

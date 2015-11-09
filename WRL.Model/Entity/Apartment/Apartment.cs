@@ -22,10 +22,7 @@ namespace WRL.Model.Entity.Apartment
 
         public string Note { get; set; }
 
-        public string Number
-        {
-            get { return Id.ToString(); }
-        }
+        public string Number { get; set; }
 
         #endregion
 
