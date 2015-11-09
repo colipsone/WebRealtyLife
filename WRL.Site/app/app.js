@@ -44,7 +44,8 @@
 
     module.service("settings", function() {
         return {
-            baseApiUrl: "http://localhost:4897/"
+            baseApiUrl: "http://localhost:4897/",
+            langLocale: "ru"
         };
     });
 

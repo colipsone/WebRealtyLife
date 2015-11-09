@@ -5,10 +5,12 @@
         .module("wrl.apartments")
         .controller("apartmentsController", apartmentsController);
 
-    apartmentsController.$inject = ["apartmentsService"];
+    apartmentsController.$inject = ["apartmentsService", "settings"];
 
-    function apartmentsController(apartmentsService) {
+    function apartmentsController(apartmentsService, settings) {
         var vm = this;
+
+        vm.lang = settings.langLocale;
 
         vm.gridOptions = {
             columnDefs: [
