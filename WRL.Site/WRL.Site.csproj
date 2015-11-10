@@ -131,6 +131,7 @@
     <Content Include="content\ui-grid.woff" />
     <Content Include="content\ui-grid.ttf" />
     <Content Include="content\ui-grid.eot" />
+    <None Include="content\site.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -234,12 +235,13 @@
     <Content Include="content\bootstrap\bootstrap.less" />
     <Content Include="content\bootstrap\badges.less" />
     <Content Include="content\bootstrap\alerts.less" />
-    <Content Include="content\site.css" />
     <None Include="scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\jquery-1.9.1.js" />
     <Content Include="scripts\jquery-1.9.1.min.js" />
+    <Content Include="scripts\less-1.5.1.js" />
+    <Content Include="scripts\less-1.5.1.min.js" />
     <Content Include="scripts\ui-grid.js" />
     <Content Include="scripts\ui-grid.min.js" />
     <Content Include="Web.config" />

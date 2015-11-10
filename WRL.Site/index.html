@@ -8,18 +8,15 @@
     <link href="content/ui-bootstrap-csp.css" rel="stylesheet"/>
     <link href="content/ui-grid.css" rel="stylesheet"/>
     <link href="content/angular-aside.css" rel="stylesheet"/>
-    <link href="content/site.css" rel="stylesheet"/>
+    <link href="content/site.less" rel="stylesheet/less"/>
 </head>
 <body>
     <div id="nav-panel" class="navbar navbar-default navbar-static-top" role="navigation" ng-controller="indexController as vm">
         <div class="container">
             <div class="navbar-header">
-                <button class="btn btn-success navbar-toggle" ng-click="navbarExpanded = !navbarExpanded">
-                    <span class="glyphicon glyphicon-chevron-down"></span>
-                </button>
                 <a class="navbar-brand" ui-sref="home">Домашняя</a>
             </div>
-            <div class="collapse navbar-collapse" data-collapse="!navbarExpanded">
+            <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li ng-hide="!vm.authentication.isAuth"><a><span ng-bind="'Добро пожаловать ' + vm.authentication.userName"></span></a></li>
                     <li ng-hide="!vm.authentication.isAuth"><a ui-sref="apartments">Квартиры</a></li>
@@ -42,6 +39,7 @@
         </div>
     </div>
     <!--Vendor scripts-->
+    <script src="scripts/less-1.5.1.js"></script>
     <script src="scripts/jquery-1.9.1.js"></script>
     <script src="scripts/bootstrap.js"></script>
     <script src="scripts/angular.js"></script>
