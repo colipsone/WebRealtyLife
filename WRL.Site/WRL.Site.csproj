@@ -98,6 +98,7 @@
     <Content Include="app\apartments\controllers\apartmentsController.js" />
     <Content Include="app\apartments\services\apartmentsService.js" />
     <Content Include="app\apartments\templates\apartmentsList.html" />
+    <Content Include="app\apartments\templates\aside.html" />
     <Content Include="app\app.js" />
     <Content Include="app\controllers\homeController.js" />
     <Content Include="app\controllers\indexController.js" />
@@ -109,11 +110,15 @@
     <Content Include="app\security\templates\login.html" />
     <Content Include="app\security\templates\signup.html" />
     <Content Include="app\templates\home.html" />
+    <Content Include="content\angular-aside.css" />
+    <Content Include="content\angular-aside.min.css" />
     <Content Include="content\ui-bootstrap-csp.css" />
     <Content Include="content\ui-grid.css" />
     <Content Include="content\ui-grid.min.css" />
     <Content Include="content\ui-grid.svg" />
     <Content Include="packages.config" />
+    <Content Include="scripts\angular-aside.js" />
+    <Content Include="scripts\angular-aside.min.js" />
     <Content Include="scripts\angular-local-storage.js" />
     <Content Include="scripts\angular-local-storage.min.js" />
     <Content Include="scripts\angular-ui\ui-bootstrap-tpls.js" />

@@ -1,3 +1,6 @@
-﻿<div class="container-fluid" ui-i18n="{{vm.lang}}">
+﻿<div id="side-menu-trigger" ng-click="vm.openAside('left', true)">
+    <div><i class="glyphicon glyphicon-chevron-right"></i></div>
+</div>
+<div class="container-fluid" ui-i18n="{{vm.lang}}">
     <div ui-grid="vm.gridOptions" class="myGrid" ui-grid-resize-columns></div>    
 </div>

@@ -22,3 +22,26 @@
     position: relative;
     height: calc(100% - 135px);
 }
+
+#side-menu-trigger {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    height: calc(100% - 5px);
+    border-radius: 0 5px 5px 0;
+    background-color: #3498db;
+}
+
+#side-menu-trigger div {
+    position: relative;
+    top: calc(50%);
+    background-color: #3498db;
+    width: 15px;
+    height: 50px;
+    border-radius: 0 5px 5px 0;
+}
+
+#side-menu-trigger div i {
+    top: 16px;
+}

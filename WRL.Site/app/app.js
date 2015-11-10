@@ -1,7 +1,7 @@
 ﻿(function () {
     "use strict";
 
-    var module = angular.module("wrl.common", ["ui.router", "wrl.security", "wrl.apartments"]);
+    var module = angular.module("wrl.common", ["ui.router", "ui.bootstrap", "wrl.security", "wrl.apartments"]);
 
     function configure($stateProvider, $httpProvider) {
 
