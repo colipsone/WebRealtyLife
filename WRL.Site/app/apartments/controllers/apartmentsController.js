@@ -5,9 +5,9 @@
         .module("wrl.apartments")
         .controller("apartmentsController", apartmentsController);
 
-    apartmentsController.$inject = ["apartmentsService", "settings", "$aside"];
+    apartmentsController.$inject = ["apartmentsService", "settings", "$uibModal"];
 
-    function apartmentsController(apartmentsService, settings, $aside) {
+    function apartmentsController(apartmentsService, settings, $uibModal) {
         var vm = this;
 
         vm.lang = settings.langLocale;
@@ -33,37 +33,60 @@
             vm.gridOptions.data = apartments;
         });
 
+        // #region Open Edit Dialog
+
+        vm.ok = function(e) {
+            asidePanelInstance.close();
+            e.stopPropagation();
+        };
+
+        vm.cancel = function(e) {
+            $uibModal.dismiss();
+            e.stopPropagation();
+        };
+
+        vm.editApartment = function(apartment) {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                templateUrl: "app/apartments/templates/apartmentDetails.html",
+                controller: "apartmentDetailsController",
+                resolve: {
+                    apartment: apartment
+                }
+            });
+
+            modalInstance.result.then(function() {
+                
+            }, function() {
+                
+            });
+        }
+
+        // #endregion
+
         // #region Aside menu
 
         vm.asideState = {
             open: false
         };
 
-        vm.openAside = function (position, backdrop) {
-            vm.asideState = {
+        vm.openAside = function () {
+            /*vm.asideState = {
                 open: true,
                 position: position
-            };
+            };*/
 
             function postClose() {
-                vm.asideState.open = false;
+                //vm.asideState.open = false;
             }
 
-            $aside.open({
+            var asidePanelInstance = $uibModal.open({
                 templateUrl: "app/apartments/templates/aside.html",
-                placement: position,
+                placement: "left",
                 size: "sm",
-                backdrop: backdrop,
-                controller: ["$scope", "$uibModalInstance", function ($scope, $uibModalInstance) {
-                    $scope.ok = function (e) {
-                        $uibModalInstance.close();
-                        e.stopPropagation();
-                    };
-                    $scope.cancel = function (e) {
-                        $uibModalInstance.dismiss();
-                        e.stopPropagation();
-                    };
-                }]
+                backdrop: false,
+                controller: "apartmentsController",
+                controllerAs: "vm"
             }).result.then(postClose, postClose);
         }
 

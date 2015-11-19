@@ -1,5 +1,5 @@
 ﻿(function() {
     "use strict";
 
-    angular.module("wrl.apartments", ["ui.grid", "ui.grid.resizeColumns", "ngAside"]);
+    angular.module("wrl.apartments", ["ui.grid", "ui.grid.resizeColumns"]);
 })();
