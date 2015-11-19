@@ -35,16 +35,6 @@
 
         // #region Open Edit Dialog
 
-        vm.ok = function(e) {
-            asidePanelInstance.close();
-            e.stopPropagation();
-        };
-
-        vm.cancel = function(e) {
-            $uibModal.dismiss();
-            e.stopPropagation();
-        };
-
         vm.editApartment = function(apartment) {
             var modalInstance = $uibModal.open({
                 animation: true,
@@ -60,34 +50,6 @@
             }, function() {
                 
             });
-        }
-
-        // #endregion
-
-        // #region Aside menu
-
-        vm.asideState = {
-            open: false
-        };
-
-        vm.openAside = function () {
-            /*vm.asideState = {
-                open: true,
-                position: position
-            };*/
-
-            function postClose() {
-                //vm.asideState.open = false;
-            }
-
-            var asidePanelInstance = $uibModal.open({
-                templateUrl: "app/apartments/templates/aside.html",
-                placement: "left",
-                size: "sm",
-                backdrop: false,
-                controller: "apartmentsController",
-                controllerAs: "vm"
-            }).result.then(postClose, postClose);
         }
 
         // #endregion

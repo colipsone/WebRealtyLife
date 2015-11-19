@@ -1,6 +1,9 @@
-﻿<div id="side-menu-trigger" ng-click="vm.openAside()">
-    <div><i class="glyphicon glyphicon-chevron-right"></i></div>
+﻿<div class="menu-trigger" snap-toggle="left">
+    <i class="glyphicon glyphicon-menu-hamburger"></i>
 </div>
-<div class="container-fluid" ui-i18n="{{vm.lang}}">
-    <div ui-grid="vm.gridOptions" class="myGrid" ui-grid-resize-columns></div>    
+<div snap-drawer>
+    <div class="panel"></div>
+</div>
+<div snap-content class="container-fluid" ui-i18n="{{vm.lang}}">
+    <div data-snap-ignore="true" ui-grid="vm.gridOptions" class="myGrid" ui-grid-resize-columns></div>    
 </div>

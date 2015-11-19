@@ -135,6 +135,12 @@
     <Content Include="vendor\angular-resource\angular-resource.js" />
     <Content Include="vendor\angular-resource\angular-resource.min.js" />
     <Content Include="vendor\angular-resource\index.js" />
+    <Content Include="vendor\angular-snap\angular-snap-only.css" />
+    <Content Include="vendor\angular-snap\angular-snap-only.min.css" />
+    <Content Include="vendor\angular-snap\angular-snap.css" />
+    <Content Include="vendor\angular-snap\angular-snap.js" />
+    <Content Include="vendor\angular-snap\angular-snap.min.css" />
+    <Content Include="vendor\angular-snap\angular-snap.min.js" />
     <Content Include="vendor\angular-ui-grid\ui-grid.css" />
     <Content Include="vendor\angular-ui-grid\ui-grid.js" />
     <Content Include="vendor\angular-ui-grid\ui-grid.min.css" />
@@ -319,6 +325,13 @@
     <Content Include="vendor\angular-ui-grid\ui-grid.eot" />
     <Content Include="vendor\angular-ui-grid\ui-grid.ttf" />
     <Content Include="vendor\angular-ui-grid\ui-grid.woff" />
+    <Content Include="vendor\Snap.js\.bower.json" />
+    <Content Include="vendor\Snap.js\component.json" />
+    <Content Include="vendor\Snap.js\README.md" />
+    <Content Include="vendor\angular-snap\.bower.json" />
+    <Content Include="vendor\angular-snap\bower.json" />
+    <Content Include="vendor\angular-snap\LICENSE-MIT" />
+    <Content Include="vendor\angular-snap\package.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -449,6 +462,29 @@
     <Content Include="vendor\less\dist\less.js" />
     <Content Include="vendor\less\dist\less.min.js" />
     <Content Include="vendor\less\index.js" />
+    <Content Include="vendor\Snap.js\.gitignore" />
+    <Content Include="vendor\Snap.js\demo\apps\classNames.html" />
+    <Content Include="vendor\Snap.js\demo\apps\default.html" />
+    <Content Include="vendor\Snap.js\demo\apps\dragElement.html" />
+    <Content Include="vendor\Snap.js\demo\apps\expand.html" />
+    <Content Include="vendor\Snap.js\demo\apps\hyperextend.html" />
+    <Content Include="vendor\Snap.js\demo\apps\noDrag.html" />
+    <Content Include="vendor\Snap.js\demo\apps\ratchet\ratchet.css" />
+    <Content Include="vendor\Snap.js\demo\apps\ratchet\ratchet.js" />
+    <Content Include="vendor\Snap.js\demo\apps\ratchet\template.html" />
+    <Content Include="vendor\Snap.js\demo\apps\rightDisabled.html" />
+    <Content Include="vendor\Snap.js\demo\apps\settings.html" />
+    <Content Include="vendor\Snap.js\demo\apps\skinnyThreshold.html" />
+    <Content Include="vendor\Snap.js\demo\apps\toggles.html" />
+    <Content Include="vendor\Snap.js\demo\assets\demo.css" />
+    <Content Include="vendor\Snap.js\demo\assets\demo.js" />
+    <Content Include="vendor\Snap.js\demo\assets\drag.png" />
+    <Content Include="vendor\Snap.js\demo\assets\graph.png" />
+    <Content Include="vendor\Snap.js\demo\assets\open.png" />
+    <Content Include="vendor\Snap.js\demo\index.html" />
+    <Content Include="vendor\Snap.js\snap.css" />
+    <Content Include="vendor\Snap.js\snap.js" />
+    <Content Include="vendor\Snap.js\snap.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

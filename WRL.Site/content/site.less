@@ -9,34 +9,20 @@ html, body {
 }
 
 .myGrid {
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 5px;
     left: 15px;
     right: 15px;
 }
 
+.menu-trigger {
+    position: absolute;
+    top: -20px;
+    left: 2px;
+}
+
 #content {
     position: relative;
     height: calc(~'100% - 135px');
-    #side-menu-trigger {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 5px;
-        height: 100%;
-        border-radius: 0 5px 5px 0;
-        background-color: @brand-info;
-        div {
-            position: relative;
-            top: 50%;
-            background-color: @brand-info;
-            width: 15px;
-            height: 50px;
-            border-radius: 0 5px 5px 0;
-            i {
-                top: 16px;
-            }
-        }
-    }
 }
